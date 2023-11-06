@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdx5qwtsyrwvf"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ixt75"]
+
+[node name="main_menu" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_ixt75")
+
+[node name="mode_list" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="menu_popup" type="Button" parent="mode_list"]
+layout_mode = 0
+offset_left = 1840.0
+offset_right = 1920.0
+offset_bottom = 64.0
+text = "Menu"
+
+[node name="menu_UI" type="CenterContainer" parent="mode_list"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 0
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="mode_list/menu_UI"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+mouse_filter = 0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mode_list/menu_UI/ScrollContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+mouse_filter = 0
+
+[node name="adjektive_endungen" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Adjektive (Endungen)"
+
+[node name="Button2" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button3" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button4" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button5" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button6" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button7" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button8" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button9" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button10" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[node name="Button11" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neuer Text"
+
+[connection signal="pressed" from="mode_list/menu_popup" to="." method="_on_menu_popup_pressed"]
+[connection signal="pressed" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/adjektive_endungen" to="." method="_on_adjektive_endungen_pressed"]

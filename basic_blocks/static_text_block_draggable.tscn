@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cevryyj6eg0va"]
+
+[ext_resource type="Script" path="res://basic_blocks/static_text_block_draggable.gd" id="1_a8ibl"]
+
+[node name="basic_text_block_draggable" type="Button" groups=["basic_text_block", "static_text_block", "static_text_block_draggable"]]
+text = "-er"
+script = ExtResource("1_a8ibl")
