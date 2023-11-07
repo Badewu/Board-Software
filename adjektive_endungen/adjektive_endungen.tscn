@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6bpgouxirwna"]
+[gd_scene load_steps=3 format=3 uid="uid://b6bpgouxirwna"]
 
 [ext_resource type="Script" path="res://adjektive_endungen/adjektive_endungen.gd" id="1_h3n4p"]
-[ext_resource type="PackedScene" uid="uid://cevryyj6eg0va" path="res://basic_blocks/static_text_block_draggable.tscn" id="2_d55tr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d12xf"]
 bg_color = Color(0.152941, 0.298039, 0.262745, 1)
@@ -24,6 +23,8 @@ offset_left = 586.0
 offset_top = 647.0
 offset_right = 626.0
 offset_bottom = 687.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="draggables" type="CenterContainer" parent="."]
 offset_top = 704.0
@@ -35,12 +36,3 @@ metadata/_edit_group_ = true
 [node name="draggables" type="HBoxContainer" parent="draggables"]
 layout_mode = 2
 metadata/_edit_group_ = true
-
-[node name="_er" parent="draggables/draggables" instance=ExtResource("2_d55tr")]
-layout_mode = 2
-
-[node name="_er2" parent="draggables/draggables" instance=ExtResource("2_d55tr")]
-layout_mode = 2
-
-[node name="_er3" parent="draggables/draggables" instance=ExtResource("2_d55tr")]
-layout_mode = 2

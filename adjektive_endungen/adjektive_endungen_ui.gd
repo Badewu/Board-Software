@@ -15,6 +15,7 @@ func _on_create_text_pressed():
 	new_text_block.text = text_content
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block)
+	get_node("left_ui/font_settings").set_font_size()
 	
 	$left_ui/add_text/text.clear()
 
@@ -26,6 +27,7 @@ func _on_create_adjective_pressed():
 	new_text_block_suffix.get_node("text").text = text_content
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block_suffix)
+	get_node("left_ui/font_settings").set_font_size()
 	
 	$left_ui/add_adjective/text.clear()
 
@@ -37,6 +39,7 @@ func _on_create_draggable_pressed():
 	new_static_text_block_draggable.text = text_content
 	
 	get_parent().get_node("board").get_node("board").add_draggable(new_static_text_block_draggable)
+	get_node("left_ui/font_settings").set_font_size()
 	
 	$left_ui/add_draggable/text.clear()
 
