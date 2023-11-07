@@ -3,6 +3,7 @@ extends Control
 @onready var basic_text_block = load("res://basic_blocks/basic_text_block.tscn")
 @onready var basic_text_block_suffix = load("res://basic_blocks/basic_text_block_suffix.tscn")
 @onready var static_text_block_draggable = load("res://basic_blocks/static_text_block_draggable.tscn")
+@onready var block_controller = load("res://ui_basic_blocks/block_controller.tres.gd")
 
 func _process(delta):
 	pass
@@ -16,6 +17,7 @@ func _on_create_text_pressed():
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block)
 	get_node("left_ui/font_settings").set_font_size()
+	get_node("right_ui").update_block_list()
 	
 	$left_ui/add_text/text.clear()
 
@@ -28,6 +30,7 @@ func _on_create_adjective_pressed():
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block_suffix)
 	get_node("left_ui/font_settings").set_font_size()
+	get_node("right_ui").update_block_list()
 	
 	$left_ui/add_adjective/text.clear()
 
@@ -40,6 +43,7 @@ func _on_create_draggable_pressed():
 	
 	get_parent().get_node("board").get_node("board").add_draggable(new_static_text_block_draggable)
 	get_node("left_ui/font_settings").set_font_size()
+	get_node("right_ui").update_block_list()
 	
 	$left_ui/add_draggable/text.clear()
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://btx2v7owclftt"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/block_controller.tres.gd" id="1_yv2bd"]
+
+[node name="block_controller" type="VBoxContainer"]
+script = ExtResource("1_yv2bd")
+
+[node name="block_text" type="LineEdit" parent="."]
+layout_mode = 2
+
+[node name="block_states" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="block_visibility" type="Button" parent="block_states"]
+layout_mode = 2
+text = "Visible"
+
+[connection signal="text_changed" from="block_text" to="." method="_on_block_text_text_changed"]
+[connection signal="pressed" from="block_states/block_visibility" to="." method="_on_block_visibility_pressed"]

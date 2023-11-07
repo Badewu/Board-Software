@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3o0iajk1xkx3"]
+[gd_scene load_steps=8 format=3 uid="uid://d3o0iajk1xkx3"]
 
 [ext_resource type="Script" path="res://adjektive_endungen/adjektive_endungen_ui.gd" id="1_khgyv"]
 [ext_resource type="Script" path="res://adjektive_endungen/font_settings.gd" id="2_87o64"]
+[ext_resource type="Script" path="res://adjektive_endungen/right_ui.gd" id="3_ry462"]
 
 [sub_resource type="GDScript" id="GDScript_es42h"]
 script/source = "extends LineEdit
@@ -150,6 +151,14 @@ text = "Show Draggables"
 [node name="clear_board" type="Button" parent="left_ui"]
 layout_mode = 2
 text = "Clear Board"
+
+[node name="right_ui" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1663.0
+offset_top = 1.0
+offset_right = 1919.0
+offset_bottom = 453.0
+script = ExtResource("3_ry462")
 
 [connection signal="pressed" from="left_ui/font_settings/increase" to="left_ui/font_settings" method="_on_increase_pressed"]
 [connection signal="pressed" from="left_ui/font_settings/decrease" to="left_ui/font_settings" method="_on_decrease_pressed"]
