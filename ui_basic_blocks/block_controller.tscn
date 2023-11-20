@@ -3,10 +3,20 @@
 [ext_resource type="Script" path="res://ui_basic_blocks/block_controller.tres.gd" id="1_yv2bd"]
 
 [node name="block_controller" type="VBoxContainer"]
+offset_right = 252.0
+offset_bottom = 66.0
 script = ExtResource("1_yv2bd")
 
-[node name="block_text" type="LineEdit" parent="."]
+[node name="block_head" type="HBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="block_text" type="LineEdit" parent="block_head"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="block_delete" type="Button" parent="block_head"]
+layout_mode = 2
+text = "X"
 
 [node name="block_states" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -15,5 +25,21 @@ layout_mode = 2
 layout_mode = 2
 text = "Visible"
 
-[connection signal="text_changed" from="block_text" to="." method="_on_block_text_text_changed"]
+[node name="italic" type="Button" parent="block_states"]
+layout_mode = 2
+text = "i"
+
+[node name="bold" type="Button" parent="block_states"]
+layout_mode = 2
+text = "b"
+
+[node name="underlined" type="Button" parent="block_states"]
+layout_mode = 2
+text = "u
+"
+
+[connection signal="text_changed" from="block_head/block_text" to="." method="_on_block_text_text_changed"]
 [connection signal="pressed" from="block_states/block_visibility" to="." method="_on_block_visibility_pressed"]
+[connection signal="pressed" from="block_states/italic" to="." method="_on_italic_pressed"]
+[connection signal="pressed" from="block_states/bold" to="." method="_on_bold_pressed"]
+[connection signal="pressed" from="block_states/underlined" to="." method="_on_underlined_pressed"]

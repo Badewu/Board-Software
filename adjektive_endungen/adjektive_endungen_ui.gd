@@ -17,7 +17,7 @@ func _on_create_text_pressed():
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block)
 	get_node("left_ui/font_settings").set_font_size()
-	get_node("right_ui").update_block_list()
+	get_node("right_ui_scroll").get_node("right_ui").update_block_list()
 	
 	$left_ui/add_text/text.clear()
 
@@ -30,7 +30,7 @@ func _on_create_adjective_pressed():
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block_suffix)
 	get_node("left_ui/font_settings").set_font_size()
-	get_node("right_ui").update_block_list()
+	get_node("right_ui_scroll").get_node("right_ui").update_block_list()
 	
 	$left_ui/add_adjective/text.clear()
 
@@ -43,7 +43,7 @@ func _on_create_draggable_pressed():
 	
 	get_parent().get_node("board").get_node("board").add_draggable(new_static_text_block_draggable)
 	get_node("left_ui/font_settings").set_font_size()
-	get_node("right_ui").update_block_list()
+	get_node("right_ui_scroll").get_node("right_ui").update_block_list()
 	
 	$left_ui/add_draggable/text.clear()
 
@@ -56,3 +56,47 @@ func _on_show_draggables_pressed():
 func _on_clear_board_pressed():
 	for child in get_tree().get_nodes_in_group("basic_text_block"):
 		child.queue_free()
+
+
+func _on_spawn_template_pressed():
+	var planned_cards = [
+		"herbstlich",
+		"glücklich",
+		"gefährlich",
+		"schrecklich",
+		"farbig",
+		"salzig",
+		"steinig",
+		"eisig",
+		"teuer"
+	]
+	var planned_cards_invisible = [
+		"Der Herbst",
+		"Das Glück",
+		"Die Gefahr",
+		"Der Schreck",
+		"Die Farbe",
+		"Das Salz",
+		"Der Stein",
+		"Das Eis"
+	]
+	for card in planned_cards:
+		var text_content = card
+		var new_text_block = basic_text_block.instantiate()
+		
+		new_text_block.text = text_content
+		
+		get_parent().get_node("board").get_node("board").add_element(new_text_block)
+		get_node("left_ui/font_settings").set_font_size()
+		get_node("right_ui_scroll").get_node("right_ui").update_block_list()
+	
+	for card_invisible in planned_cards_invisible:
+		var text_content = card_invisible
+		var new_text_block = basic_text_block.instantiate()
+		
+		new_text_block.text = text_content
+		new_text_block.visible = false
+		
+		get_parent().get_node("board").get_node("board").add_element(new_text_block)
+		get_node("left_ui/font_settings").set_font_size()
+		get_node("right_ui_scroll").get_node("right_ui").update_block_list()

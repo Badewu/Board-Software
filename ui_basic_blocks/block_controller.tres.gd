@@ -1,6 +1,7 @@
 extends VBoxContainer
 
 var connected_block
+var custom_font_size : bool = false
 
 
 func _on_block_text_text_changed(new_text):
@@ -12,3 +13,15 @@ func _on_block_text_text_changed(new_text):
 
 func _on_block_visibility_pressed():
 	connected_block.visible = !connected_block.visible
+
+
+func _on_italic_pressed():
+	pass # Replace with function body.
+
+
+func _on_bold_pressed():
+	pass # Replace with function body.
+
+
+func _on_underlined_pressed():
+	pass # Replace with function body.

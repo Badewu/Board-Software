@@ -2,6 +2,7 @@ extends HBoxContainer
 
 var hovered : bool = false
 var dragging : bool = false
+var custom_font_size : bool = false
 
 
 func _process(delta):

@@ -1,6 +1,7 @@
 extends Button
 
 var dragged : bool = false
+var custom_font_size : bool = false
 
 func _process(delta):
 	if dragged:
