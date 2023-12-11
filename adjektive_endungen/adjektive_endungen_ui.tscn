@@ -158,11 +158,16 @@ layout_mode = 2
 text = "Spawn Template"
 
 [node name="right_ui_scroll" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_left = 1458.0
-offset_top = -2.0
-offset_right = 1920.0
-offset_bottom = 1068.0
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.869271
+anchor_top = 0.0759259
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="right_ui" type="VBoxContainer" parent="right_ui_scroll"]
 layout_mode = 2

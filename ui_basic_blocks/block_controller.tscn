@@ -1,45 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://btx2v7owclftt"]
+[gd_scene load_steps=3 format=3 uid="uid://btx2v7owclftt"]
 
 [ext_resource type="Script" path="res://ui_basic_blocks/block_controller.tres.gd" id="1_yv2bd"]
 
-[node name="block_controller" type="VBoxContainer"]
-offset_right = 252.0
-offset_bottom = 66.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qgtk"]
+bg_color = Color(0.796078, 0.533333, 0.266667, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="block_controller" type="PanelContainer" groups=["block_controller"]]
+offset_right = 328.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qgtk")
 script = ExtResource("1_yv2bd")
 
-[node name="block_head" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="block_text" type="LineEdit" parent="block_head"]
+[node name="block_head" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="block_text" type="LineEdit" parent="VBoxContainer/block_head"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="block_delete" type="Button" parent="block_head"]
+[node name="block_delete" type="Button" parent="VBoxContainer/block_head"]
 layout_mode = 2
 text = "X"
 
-[node name="block_states" type="HBoxContainer" parent="."]
+[node name="block_states" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="block_visibility" type="Button" parent="block_states"]
+[node name="block_visibility" type="Button" parent="VBoxContainer/block_states"]
 layout_mode = 2
 text = "Visible"
 
-[node name="italic" type="Button" parent="block_states"]
+[node name="italic" type="Button" parent="VBoxContainer/block_states"]
 layout_mode = 2
 text = "i"
 
-[node name="bold" type="Button" parent="block_states"]
+[node name="bold" type="Button" parent="VBoxContainer/block_states"]
 layout_mode = 2
 text = "b"
 
-[node name="underlined" type="Button" parent="block_states"]
+[node name="underlined" type="Button" parent="VBoxContainer/block_states"]
 layout_mode = 2
 text = "u
 "
 
-[connection signal="text_changed" from="block_head/block_text" to="." method="_on_block_text_text_changed"]
-[connection signal="pressed" from="block_states/block_visibility" to="." method="_on_block_visibility_pressed"]
-[connection signal="pressed" from="block_states/italic" to="." method="_on_italic_pressed"]
-[connection signal="pressed" from="block_states/bold" to="." method="_on_bold_pressed"]
-[connection signal="pressed" from="block_states/underlined" to="." method="_on_underlined_pressed"]
+[connection signal="text_changed" from="VBoxContainer/block_head/block_text" to="." method="_on_block_text_text_changed"]
+[connection signal="pressed" from="VBoxContainer/block_head/block_delete" to="." method="_on_block_delete_pressed"]
+[connection signal="pressed" from="VBoxContainer/block_states/block_visibility" to="." method="_on_block_visibility_pressed"]
+[connection signal="pressed" from="VBoxContainer/block_states/italic" to="." method="_on_italic_pressed"]
+[connection signal="pressed" from="VBoxContainer/block_states/bold" to="." method="_on_bold_pressed"]
+[connection signal="pressed" from="VBoxContainer/block_states/underlined" to="." method="_on_underlined_pressed"]

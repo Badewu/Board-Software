@@ -56,6 +56,9 @@ func _on_show_draggables_pressed():
 func _on_clear_board_pressed():
 	for child in get_tree().get_nodes_in_group("basic_text_block"):
 		child.queue_free()
+		
+	for child in get_tree().get_nodes_in_group("block_controller"):
+		child.queue_free()
 
 
 func _on_spawn_template_pressed():

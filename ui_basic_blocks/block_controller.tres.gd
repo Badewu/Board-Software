@@ -1,7 +1,8 @@
-extends VBoxContainer
+extends PanelContainer
 
 var connected_block
 var custom_font_size : bool = false
+@onready var block_text = get_node("VBoxContainer/block_head/block_text")
 
 
 func _on_block_text_text_changed(new_text):
@@ -25,3 +26,8 @@ func _on_bold_pressed():
 
 func _on_underlined_pressed():
 	pass # Replace with function body.
+
+
+func _on_block_delete_pressed():
+	connected_block.queue_free()
+	queue_free()
