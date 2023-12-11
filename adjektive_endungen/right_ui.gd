@@ -8,10 +8,12 @@ func update_block_list():
 	
 	for node in get_tree().get_nodes_in_group("basic_text_block"):
 		var new_block_controller = block_controller.instantiate()
+		
 		if !node.get_children():
 			new_block_controller.get_node("VBoxContainer").get_node("block_head")\
 			.get_node("block_text").text = node.text
 		else:
-			new_block_controller.get_node("block_head").get_node("block_text").text = node.get_node("text").text
+			new_block_controller.get_node("VBoxContainer").get_node("block_head")\
+			.get_node("block_text").text = node.get_node("text").text
 		add_child(new_block_controller)
 		new_block_controller.connected_block = node

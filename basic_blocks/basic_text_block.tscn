@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" path="res://basic_blocks/basic_text_block.gd" id="1_vwklc"]
 
-[node name="basic_text_block" type="Button" groups=["basic_text_block", "basic_text_block_only"]]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="basic_text_block" type="CenterContainer" groups=["basic_text_block", "basic_text_block_only"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="text" type="Button" parent="."]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Testbutton"
 script = ExtResource("1_vwklc")
 
-[connection signal="button_down" from="." to="." method="_on_button_down"]
-[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="button_down" from="text" to="text" method="_on_button_down"]
+[connection signal="button_up" from="text" to="text" method="_on_button_up"]

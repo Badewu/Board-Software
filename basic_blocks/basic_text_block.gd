@@ -5,7 +5,7 @@ var custom_font_size : bool = false
 
 func _process(delta):
 	if dragged:
-		position = get_global_mouse_position() - size / 2
+		get_parent().position = get_global_mouse_position() - size / 2
 		
 
 

@@ -13,7 +13,7 @@ func _on_create_text_pressed():
 	var text_content = $left_ui/add_text/text.text
 	var new_text_block = basic_text_block.instantiate()
 	
-	new_text_block.text = text_content
+	new_text_block.get_node("text").text = text_content
 	
 	get_parent().get_node("board").get_node("board").add_element(new_text_block)
 	get_node("left_ui/font_settings").set_font_size()
