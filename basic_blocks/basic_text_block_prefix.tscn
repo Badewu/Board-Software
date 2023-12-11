@@ -1,9 +1,40 @@
-[gd_scene format=3 uid="uid://bydakpjv6huf5"]
+[gd_scene load_steps=3 format=3 uid="uid://xor7wjtt1ulu"]
 
-[node name="basic_text_block_prefix" type="Control" groups=["basic_text_block", "basic_text_block_prefix"]]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" path="res://basic_blocks/basic_text_block_prefix.gd" id="1_h4ap3"]
+
+[sub_resource type="GDScript" id="GDScript_04l6a"]
+script/source = "extends Button
+
+func _can_drop_data(at_position, data):
+	#print(\"DETECTING\")
+	return typeof(data) == TYPE_STRING
+
+func _drop_data(at_position, data):
+	text = data
+"
+
+[node name="basic_text_block_suffix" type="HBoxContainer" groups=["basic_text_block", "basic_text_block_suffix"]]
+offset_right = 20.0
+offset_bottom = 8.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+theme_override_constants/separation = 0
+script = ExtResource("1_h4ap3")
+metadata/_edit_group_ = true
+
+[node name="drop_box" type="Button" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+script = SubResource("GDScript_04l6a")
+
+[node name="text" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

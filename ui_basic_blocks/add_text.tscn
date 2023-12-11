@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2q0vj220ivpe"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/add_text.gd" id="1_skex7"]
+
+[node name="add_text" type="HBoxContainer"]
+mouse_filter = 0
+
+[node name="text" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Normale Textkarte"
+script = ExtResource("1_skex7")
+
+[node name="create_text" type="Button" parent="."]
+layout_mode = 2
+text = "Fertig"
+
+[connection signal="pressed" from="create_text" to="text" method="_on_create_text_pressed"]

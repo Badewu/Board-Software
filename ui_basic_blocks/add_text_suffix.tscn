@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ofny4maj1e3p"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/add_text_suffix.gd" id="1_uvv0g"]
+
+[node name="add_adjective" type="HBoxContainer"]
+mouse_filter = 0
+
+[node name="text" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Adjektive (Box mit ergänzbarer Endung)"
+script = ExtResource("1_uvv0g")
+
+[node name="create adjective" type="Button" parent="."]
+layout_mode = 2
+text = "Fertig"
+
+[connection signal="pressed" from="create adjective" to="text" method="_on_create_adjective_pressed"]

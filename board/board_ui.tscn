@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3o0iajk1xkx3"]
+
+[ext_resource type="Script" path="res://board/board_ui.gd" id="1_c6hki"]
+[ext_resource type="PackedScene" uid="uid://ccruw6uubnp02" path="res://ui_basic_blocks/font_settings.tscn" id="2_xp62w"]
+[ext_resource type="PackedScene" uid="uid://c2q0vj220ivpe" path="res://ui_basic_blocks/add_text.tscn" id="3_im44s"]
+[ext_resource type="Script" path="res://board/right_ui.gd" id="4_grvn6"]
+[ext_resource type="PackedScene" uid="uid://ofny4maj1e3p" path="res://ui_basic_blocks/add_text_suffix.tscn" id="4_j64e3"]
+[ext_resource type="PackedScene" uid="uid://dn0t7xm28r4cu" path="res://ui_basic_blocks/add_draggable.tscn" id="5_ul3ol"]
+[ext_resource type="PackedScene" uid="uid://brtwlf5xkdivm" path="res://ui_basic_blocks/add_text_prefix.tscn" id="6_8xaft"]
+
+[node name="board_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6hki")
+
+[node name="left_ui" type="VBoxContainer" parent="." groups=["left_ui"]]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 1080.0
+mouse_filter = 0
+
+[node name="Button" type="Button" parent="left_ui"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "X"
+
+[node name="font_settings_caption" type="Label" parent="left_ui"]
+layout_mode = 2
+text = "Font Settings:"
+
+[node name="font_settings" parent="left_ui" instance=ExtResource("2_xp62w")]
+layout_mode = 2
+
+[node name="add_text_caption" type="Label" parent="left_ui"]
+layout_mode = 2
+text = "Add normal text"
+
+[node name="add_text" parent="left_ui" instance=ExtResource("3_im44s")]
+layout_mode = 2
+
+[node name="add_adjective_caption" type="Label" parent="left_ui"]
+layout_mode = 2
+text = "Add adjective with empty suffix:"
+
+[node name="add_text_suffix" parent="left_ui" instance=ExtResource("4_j64e3")]
+layout_mode = 2
+
+[node name="add_draggable_caption" type="Label" parent="left_ui"]
+layout_mode = 2
+text = "Add Draggable:"
+
+[node name="add_draggable" parent="left_ui" instance=ExtResource("5_ul3ol")]
+layout_mode = 2
+
+[node name="show_draggables" type="Button" parent="left_ui"]
+layout_mode = 2
+text = "Show Draggables"
+
+[node name="clear_board" type="Button" parent="left_ui"]
+layout_mode = 2
+text = "Clear Board"
+
+[node name="Label" type="Label" parent="left_ui"]
+layout_mode = 2
+text = "Add text with prefix"
+
+[node name="add_text_prefix" parent="left_ui" instance=ExtResource("6_8xaft")]
+layout_mode = 2
+
+[node name="right_ui_scroll" type="ScrollContainer" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833333
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="right_ui" type="VBoxContainer" parent="right_ui_scroll" groups=["right_ui"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("4_grvn6")
+
+[connection signal="pressed" from="left_ui/show_draggables" to="." method="_on_show_draggables_pressed"]
+[connection signal="pressed" from="left_ui/clear_board" to="." method="_on_clear_board_pressed"]

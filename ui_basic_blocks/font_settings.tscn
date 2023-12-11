@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccruw6uubnp02"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/font_settings.gd" id="1_uryux"]
+
+[sub_resource type="GDScript" id="GDScript_es42h"]
+script/source = "extends LineEdit
+
+func _gui_input(event):
+	if event is InputEventKey:
+		if event.keycode == KEY_ENTER and event.pressed:
+			get_parent().set_new_font_size(int(text))
+"
+
+[node name="font_settings" type="HBoxContainer" groups=["font_settings"]]
+script = ExtResource("1_uryux")
+
+[node name="increase" type="Button" parent="."]
+layout_mode = 2
+text = "+"
+
+[node name="decrease" type="Button" parent="."]
+layout_mode = 2
+text = "-"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+script = SubResource("GDScript_es42h")
+
+[connection signal="pressed" from="increase" to="." method="_on_increase_pressed"]
+[connection signal="pressed" from="decrease" to="." method="_on_decrease_pressed"]

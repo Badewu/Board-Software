@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn0t7xm28r4cu"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/add_draggable.gd" id="1_qhhnt"]
+
+[node name="add_draggable" type="HBoxContainer"]
+mouse_filter = 2
+
+[node name="text" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Endungen"
+script = ExtResource("1_qhhnt")
+
+[node name="create_draggable" type="Button" parent="."]
+layout_mode = 2
+text = "Fertig"
+
+[connection signal="pressed" from="create_draggable" to="text" method="_on_create_draggable_pressed"]

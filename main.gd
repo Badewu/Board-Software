@@ -1,9 +1,8 @@
 extends Node2D
 
-@onready var board = get_node("board")
+@onready var board = get_tree().get_first_node_in_group("board")
 var current_ui
 var current_board
-#@onready var board_mirror = get_node("board_mirror")
 
 func _ready():
 	pass # Replace with function body.
