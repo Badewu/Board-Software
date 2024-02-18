@@ -18,6 +18,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="menu_popup" type="Button" parent="mode_list"]
+visible = false
 layout_mode = 0
 offset_left = 1840.0
 offset_right = 1920.0
@@ -43,60 +44,10 @@ custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 mouse_filter = 0
 
-[node name="adjektive_endungen" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+[node name="custom_board" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Adjektive (Endungen)"
-
-[node name="Button2" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button3" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button4" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button5" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button6" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button7" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button8" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button9" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button10" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
-
-[node name="Button11" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Neuer Text"
+text = "Tafel"
 
 [connection signal="pressed" from="mode_list/menu_popup" to="." method="_on_menu_popup_pressed"]
-[connection signal="pressed" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/adjektive_endungen" to="." method="_on_adjektive_endungen_pressed"]
+[connection signal="pressed" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/custom_board" to="." method="_on_adjektive_endungen_pressed"]

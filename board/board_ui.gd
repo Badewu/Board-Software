@@ -31,3 +31,7 @@ func _on_clear_board_pressed():
 		
 	for child in get_tree().get_nodes_in_group("block_controller"):
 		child.queue_free()
+
+
+func _on_exit_to_menu_pressed():
+	get_tree().quit()

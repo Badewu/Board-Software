@@ -12,7 +12,7 @@ var board_ui = "res://board/board_ui.tscn"
 func _on_adjektive_endungen_pressed():
 	if get_parent():
 		get_parent().load_board(board, board_ui)
-		menu_popup.visible = true
+		#menu_popup.visible = true
 		menu_ui.visible = false
 
 
@@ -20,4 +20,4 @@ func _on_adjektive_endungen_pressed():
 
 func _on_menu_popup_pressed():
 	menu_ui.visible = true
-	menu_popup.visible = false
+	#menu_popup.visible = false

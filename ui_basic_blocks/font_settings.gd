@@ -2,6 +2,10 @@ extends HBoxContainer
 
 var font_size : int = 70
 
+func _ready():
+	set_new_font_size(70)
+
+
 func _on_increase_pressed():
 	var new_font_size := font_size + 5
 	set_new_font_size(new_font_size)
@@ -14,6 +18,7 @@ func _on_decrease_pressed():
 
 func set_new_font_size(new_font_size : int):
 	font_size = new_font_size
+	get_node("font_size_text").text = str(font_size)
 	for child in get_tree().get_nodes_in_group("basic_text_block"):
 		if !child.get_children():
 			child.add_theme_font_size_override("font_size", font_size)
