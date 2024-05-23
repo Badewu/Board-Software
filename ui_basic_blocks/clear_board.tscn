@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ix0ma50scads"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/clear_board.gd" id="1_674r8"]
+
+[node name="clear_board" type="Button"]
+text = "Clear Board"
+script = ExtResource("1_674r8")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

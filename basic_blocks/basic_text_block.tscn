@@ -1,11 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b83adri2kp1yg"]
+[gd_scene load_steps=3 format=3 uid="uid://b83adri2kp1yg"]
 
+[ext_resource type="Theme" uid="uid://pa3r8c5m411j" path="res://basic_blocks/board_text_theme.tres" id="1_34nig"]
 [ext_resource type="Script" path="res://basic_blocks/basic_text_block.gd" id="1_vwklc"]
 
 [node name="basic_text_block" type="CenterContainer" groups=["basic_text_block", "basic_text_block_only"]]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_34nig")
 
 [node name="text" type="Button" parent="."]
 layout_mode = 2

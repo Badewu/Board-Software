@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdx5qwtsyrwvf"]
+[gd_scene load_steps=3 format=3 uid="uid://cdx5qwtsyrwvf"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ixt75"]
+
+[sub_resource type="GDScript" id="GDScript_ipuke"]
+script/source = "extends Button
+
+
+func _on_pressed():
+	get_node(\"FileDialog\").show()
+"
 
 [node name="main_menu" type="Control"]
 top_level = true
@@ -49,5 +57,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Tafel"
 
+[node name="load_board" type="Button" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Load Board"
+script = SubResource("GDScript_ipuke")
+
+[node name="FileDialog" type="FileDialog" parent="mode_list/menu_UI/ScrollContainer/VBoxContainer/load_board"]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(700, 700)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
 [connection signal="pressed" from="mode_list/menu_popup" to="." method="_on_menu_popup_pressed"]
-[connection signal="pressed" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/custom_board" to="." method="_on_adjektive_endungen_pressed"]
+[connection signal="pressed" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/custom_board" to="." method="_create_custom_board"]
+[connection signal="pressed" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/load_board" to="mode_list/menu_UI/ScrollContainer/VBoxContainer/load_board" method="_on_pressed"]
+[connection signal="file_selected" from="mode_list/menu_UI/ScrollContainer/VBoxContainer/load_board/FileDialog" to="." method="_on_file_dialog_file_selected"]

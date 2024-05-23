@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdgfvxahoc1yw"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/show_draggables.gd" id="1_y763d"]
+
+[node name="show_draggables" type="Button"]
+text = "Show Draggables"
+script = ExtResource("1_y763d")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

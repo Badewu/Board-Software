@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui_basic_blocks/add_text_prefix.gd" id="1_c32sc"]
 
-[node name="add_adjective" type="HBoxContainer"]
+[node name="add_text_prefix" type="HBoxContainer"]
 mouse_filter = 0
 
 [node name="text" type="TextEdit" parent="."]

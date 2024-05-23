@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx06kc85x60e1"]
+
+[ext_resource type="Script" path="res://ui_basic_blocks/safe_to_file.gd" id="1_walx2"]
+
+[node name="safe_to_file" type="Button"]
+size_flags_horizontal = 0
+text = "Safe Board"
+script = ExtResource("1_walx2")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+initial_position = 1
+size = Vector2i(700, 700)
+access = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
